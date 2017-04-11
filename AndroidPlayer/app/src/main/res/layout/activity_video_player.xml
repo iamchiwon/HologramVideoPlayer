@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#000"
+    tools:context="com.iamchiwon.study.hologramvideoplayer.VideoPlayer">
+
+
+    <com.ssomai.android.scalablelayout.ScalableLayout
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:scale_base_width="900"
+        app:scale_base_height="900">
+
+        <VideoView
+            android:id="@+id/player1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="300"
+            app:scale_top="0"
+            app:scale_width="300"
+            app:scale_height="300"></VideoView>
+
+        <VideoView
+            android:id="@+id/player2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="0"
+            app:scale_top="300"
+            app:scale_width="300"
+            app:scale_height="300"></VideoView>
+
+        <VideoView
+            android:id="@+id/player3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="600"
+            app:scale_top="300"
+            app:scale_width="300"
+            app:scale_height="300"></VideoView>
+
+        <VideoView
+            android:id="@+id/player4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="300"
+            app:scale_top="600"
+            app:scale_width="300"
+            app:scale_height="300"></VideoView>
+
+    </com.ssomai.android.scalablelayout.ScalableLayout>
+</RelativeLayout>
