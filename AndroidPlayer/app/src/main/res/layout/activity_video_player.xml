@@ -10,8 +10,7 @@
     <com.ssomai.android.scalablelayout.ScalableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
         app:scale_base_height="900"
         app:scale_base_width="900">
 

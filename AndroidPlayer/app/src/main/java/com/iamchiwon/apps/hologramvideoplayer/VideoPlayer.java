@@ -33,6 +33,10 @@ public class VideoPlayer extends AppCompatActivity {
         player3 = (FlippableVideoView) findViewById(R.id.player3);
         player4 = (FlippableVideoView) findViewById(R.id.player4);
 
+        player2.mute();
+        player3.mute();
+        player4.mute();
+
         player1.flipV();
         player2.rotateRight();
         player3.flipH();
