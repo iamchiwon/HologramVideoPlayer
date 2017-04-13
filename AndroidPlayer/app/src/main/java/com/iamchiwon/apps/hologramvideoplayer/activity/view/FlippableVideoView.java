@@ -1,4 +1,4 @@
-package com.iamchiwon.apps.hologramvideoplayer;
+package com.iamchiwon.apps.hologramvideoplayer.activity.view;
 
 import android.content.Context;
 import android.graphics.SurfaceTexture;

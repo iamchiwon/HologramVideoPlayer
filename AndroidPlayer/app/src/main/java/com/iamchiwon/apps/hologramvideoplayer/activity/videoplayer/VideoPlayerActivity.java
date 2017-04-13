@@ -1,17 +1,15 @@
-package com.iamchiwon.apps.hologramvideoplayer;
+package com.iamchiwon.apps.hologramvideoplayer.activity.videoplayer;
 
-import android.graphics.SurfaceTexture;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Surface;
-import android.view.TextureView;
 import android.view.WindowManager;
-import android.widget.VideoView;
 
-public class VideoPlayer extends AppCompatActivity {
+import com.iamchiwon.apps.hologramvideoplayer.R;
+import com.iamchiwon.apps.hologramvideoplayer.activity.view.FlippableVideoView;
+
+public class VideoPlayerActivity extends AppCompatActivity {
 
     FlippableVideoView player1;
     FlippableVideoView player2;

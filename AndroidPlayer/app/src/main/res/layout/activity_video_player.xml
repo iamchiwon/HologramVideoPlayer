@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000"
-    tools:context="com.iamchiwon.apps.hologramvideoplayer.VideoPlayer">
+    tools:context=".activity.videoplayer.VideoPlayerActivity">
 
 
     <com.ssomai.android.scalablelayout.ScalableLayout
@@ -14,7 +14,7 @@
         app:scale_base_height="900"
         app:scale_base_width="900">
 
-        <com.iamchiwon.apps.hologramvideoplayer.FlippableVideoView
+        <com.iamchiwon.apps.hologramvideoplayer.activity.view.FlippableVideoView
             android:id="@+id/player1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -23,7 +23,7 @@
             app:scale_top="0"
             app:scale_width="300" />
 
-        <com.iamchiwon.apps.hologramvideoplayer.FlippableVideoView
+        <com.iamchiwon.apps.hologramvideoplayer.activity.view.FlippableVideoView
             android:id="@+id/player2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
             app:scale_top="300"
             app:scale_width="300" />
 
-        <com.iamchiwon.apps.hologramvideoplayer.FlippableVideoView
+        <com.iamchiwon.apps.hologramvideoplayer.activity.view.FlippableVideoView
             android:id="@+id/player3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
             app:scale_top="300"
             app:scale_width="300" />
 
-        <com.iamchiwon.apps.hologramvideoplayer.FlippableVideoView
+        <com.iamchiwon.apps.hologramvideoplayer.activity.view.FlippableVideoView
             android:id="@+id/player4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

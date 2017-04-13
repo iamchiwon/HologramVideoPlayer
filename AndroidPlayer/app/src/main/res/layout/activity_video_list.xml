@@ -9,19 +9,12 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.iamchiwon.apps.hologramvideoplayer.MainActivity">
+    tools:context=".activity.videolist.VideoListActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:id="@+id/textView" />
+    <ListView
+        android:id="@+id/videoFileList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
 
-    <Button
-        android:text="Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentStart="true"
-        android:id="@+id/button" />
 </RelativeLayout>
