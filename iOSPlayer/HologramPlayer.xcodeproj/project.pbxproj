@@ -1,0 +1,323 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A14487461EA3596C004370F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14487451EA3596C004370F3 /* AppDelegate.swift */; };
+		A144874B1EA3596C004370F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14487491EA3596C004370F3 /* Main.storyboard */; };
+		A144874D1EA3596C004370F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A144874C1EA3596C004370F3 /* Assets.xcassets */; };
+		A14487501EA3596C004370F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A144874E1EA3596C004370F3 /* LaunchScreen.storyboard */; };
+		A14487581EA35E2C004370F3 /* VideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14487571EA35E2C004370F3 /* VideoListViewController.swift */; };
+		A144875B1EA35E4F004370F3 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A144875A1EA35E4F004370F3 /* VideoPlayerViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A14487421EA3596C004370F3 /* HologramPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HologramPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A14487451EA3596C004370F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A144874A1EA3596C004370F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A144874C1EA3596C004370F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A144874F1EA3596C004370F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A14487511EA3596C004370F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A14487571EA35E2C004370F3 /* VideoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoListViewController.swift; path = ViewControllers/VideoListViewController.swift; sourceTree = "<group>"; };
+		A144875A1EA35E4F004370F3 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPlayerViewController.swift; path = ViewControllers/VideoPlayerViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A144873F1EA3596C004370F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A14487391EA3596C004370F3 = {
+			isa = PBXGroup;
+			children = (
+				A14487441EA3596C004370F3 /* HologramPlayer */,
+				A14487431EA3596C004370F3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A14487431EA3596C004370F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A14487421EA3596C004370F3 /* HologramPlayer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A14487441EA3596C004370F3 /* HologramPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				A14487591EA35E33004370F3 /* ViewControllers */,
+				A14487451EA3596C004370F3 /* AppDelegate.swift */,
+				A14487491EA3596C004370F3 /* Main.storyboard */,
+				A144874C1EA3596C004370F3 /* Assets.xcassets */,
+				A144874E1EA3596C004370F3 /* LaunchScreen.storyboard */,
+				A14487511EA3596C004370F3 /* Info.plist */,
+			);
+			path = HologramPlayer;
+			sourceTree = "<group>";
+		};
+		A14487591EA35E33004370F3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A14487571EA35E2C004370F3 /* VideoListViewController.swift */,
+				A144875A1EA35E4F004370F3 /* VideoPlayerViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A14487411EA3596C004370F3 /* HologramPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A14487541EA3596C004370F3 /* Build configuration list for PBXNativeTarget "HologramPlayer" */;
+			buildPhases = (
+				A144873E1EA3596C004370F3 /* Sources */,
+				A144873F1EA3596C004370F3 /* Frameworks */,
+				A14487401EA3596C004370F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HologramPlayer;
+			productName = HologramPlayer;
+			productReference = A14487421EA3596C004370F3 /* HologramPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A144873A1EA3596C004370F3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = makecube;
+				TargetAttributes = {
+					A14487411EA3596C004370F3 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 77YZ9248DM;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A144873D1EA3596C004370F3 /* Build configuration list for PBXProject "HologramPlayer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A14487391EA3596C004370F3;
+			productRefGroup = A14487431EA3596C004370F3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A14487411EA3596C004370F3 /* HologramPlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A14487401EA3596C004370F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A14487501EA3596C004370F3 /* LaunchScreen.storyboard in Resources */,
+				A144874D1EA3596C004370F3 /* Assets.xcassets in Resources */,
+				A144874B1EA3596C004370F3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A144873E1EA3596C004370F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A144875B1EA35E4F004370F3 /* VideoPlayerViewController.swift in Sources */,
+				A14487581EA35E2C004370F3 /* VideoListViewController.swift in Sources */,
+				A14487461EA3596C004370F3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A14487491EA3596C004370F3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A144874A1EA3596C004370F3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A144874E1EA3596C004370F3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A144874F1EA3596C004370F3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A14487521EA3596C004370F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A14487531EA3596C004370F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A14487551EA3596C004370F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 77YZ9248DM;
+				INFOPLIST_FILE = HologramPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iamchiwon.apps.HologramPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A14487561EA3596C004370F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 77YZ9248DM;
+				INFOPLIST_FILE = HologramPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iamchiwon.apps.HologramPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A144873D1EA3596C004370F3 /* Build configuration list for PBXProject "HologramPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A14487521EA3596C004370F3 /* Debug */,
+				A14487531EA3596C004370F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A14487541EA3596C004370F3 /* Build configuration list for PBXNativeTarget "HologramPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A14487551EA3596C004370F3 /* Debug */,
+				A14487561EA3596C004370F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A144873A1EA3596C004370F3 /* Project object */;
+}
