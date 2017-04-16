@@ -14,9 +14,11 @@
 
 ![Butterfly](images/direction_2.png)
 
-## [Windows Player](WindowsPlayer/README.md)
-## [Android Player](AndroidPlayer/README.md)
-## [iOS Player](iOSPlayer/README.md)
+## Video Players
+
+- [Windows Player](WindowsPlayer/README.md)
+- [Android Player](AndroidPlayer/README.md)
+- [iOS Player](iOSPlayer/README.md)
 
 ## 참고
 
