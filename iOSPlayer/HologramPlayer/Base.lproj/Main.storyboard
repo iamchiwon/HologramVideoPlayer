@@ -24,22 +24,22 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IC7-sz-g2l">
                                 <rect key="frame" x="125" y="146.5" width="125" height="124.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FMe-Fg-aGx">
                                 <rect key="frame" x="0.0" y="271" width="125" height="125"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FMe-Fg-aGx" secondAttribute="height" multiplier="1:1" id="SSu-QT-aIg"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wxQ-UQ-eRU">
                                 <rect key="frame" x="250" y="271" width="124.5" height="125"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ly3-Yq-Osp">
                                 <rect key="frame" x="125" y="396" width="125" height="124.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v4n-j4-YYr">
                                 <rect key="frame" x="0.0" y="607" width="375" height="60"/>
@@ -47,21 +47,57 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzn-Wa-yMF">
-                                            <rect key="frame" x="8" y="8" width="42" height="44"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                            <state key="normal" title="Close">
-                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="onClose:" destination="gpX-TX-1hi" eventType="touchUpInside" id="Isi-gZ-Dph"/>
-                                            </connections>
-                                        </button>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jTe-Je-zbb">
+                                            <rect key="frame" x="8" y="8" width="359" height="44"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzn-Wa-yMF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="44"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="Close">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onClose:" destination="gpX-TX-1hi" eventType="touchUpInside" id="Isi-gZ-Dph"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9H-L9-LUF">
+                                                    <rect key="frame" x="90" y="0.0" width="89.5" height="44"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="Pause">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onPause:" destination="gpX-TX-1hi" eventType="touchUpInside" id="TK1-gg-j89"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8H-wZ-Bta">
+                                                    <rect key="frame" x="179.5" y="0.0" width="90" height="44"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="Mute">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onMute:" destination="gpX-TX-1hi" eventType="touchUpInside" id="Sx6-bL-Zx1"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6W-1o-M7N">
+                                                    <rect key="frame" x="269.5" y="0.0" width="89.5" height="44"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="Flip">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onFlip:" destination="gpX-TX-1hi" eventType="touchUpInside" id="w61-fw-yRJ"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="vzn-Wa-yMF" secondAttribute="bottom" constant="8" id="531-vs-NHu"/>
-                                        <constraint firstItem="vzn-Wa-yMF" firstAttribute="leading" secondItem="9Iy-Rg-7L1" secondAttribute="leading" constant="8" id="ABL-sQ-xPe"/>
-                                        <constraint firstItem="vzn-Wa-yMF" firstAttribute="top" secondItem="9Iy-Rg-7L1" secondAttribute="top" constant="8" id="YpI-1O-e3O"/>
+                                        <constraint firstAttribute="bottom" secondItem="jTe-Je-zbb" secondAttribute="bottom" constant="8" id="3cS-pZ-5hm"/>
+                                        <constraint firstItem="jTe-Je-zbb" firstAttribute="leading" secondItem="9Iy-Rg-7L1" secondAttribute="leading" constant="8" id="U0M-bt-Gu4"/>
+                                        <constraint firstAttribute="trailing" secondItem="jTe-Je-zbb" secondAttribute="trailing" constant="8" id="gwW-Z4-9fJ"/>
+                                        <constraint firstItem="jTe-Je-zbb" firstAttribute="top" secondItem="9Iy-Rg-7L1" secondAttribute="top" constant="8" id="ixM-cb-Wq8"/>
                                     </constraints>
                                 </view>
                                 <constraints>
@@ -99,8 +135,11 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="bottomBoxBottomConstrains" destination="HKW-3s-8ex" id="JbQ-si-IDO"/>
                         <outlet property="bottomControlBox" destination="v4n-j4-YYr" id="p6y-vi-a2G"/>
+                        <outlet property="player1" destination="IC7-sz-g2l" id="CVQ-a5-ilx"/>
+                        <outlet property="player2" destination="FMe-Fg-aGx" id="vji-yN-hrr"/>
+                        <outlet property="player3" destination="wxQ-UQ-eRU" id="NL9-BC-d9o"/>
+                        <outlet property="player4" destination="ly3-Yq-Osp" id="dRI-Tv-1W3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKc-7f-pNO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -154,7 +193,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DaE-fh-mtK">
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DaE-fh-mtK">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                     <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="VideoImage"/>
@@ -194,6 +233,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="captureVideo" destination="JAZ-gM-aDn" id="w4n-5p-paj"/>
                         <outlet property="collectionView" destination="pJu-qh-E1u" id="EVz-9S-Ih1"/>
                     </connections>
                 </viewController>
