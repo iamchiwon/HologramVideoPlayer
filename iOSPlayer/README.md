@@ -1,4 +1,4 @@
-## [iOS Player](iOSPlayer/README.md)
+## iOS Player
 
 ### 비디오 재생하기
 
