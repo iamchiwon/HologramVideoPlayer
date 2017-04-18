@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+//apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion 25
@@ -34,10 +35,11 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.2.0'
     compile 'com.android.support:support-v4:25.2.0'
+    compile 'com.android.support:design:25.2.0'
     testCompile 'junit:junit:4.12'
     compile 'com.ssomai:android.scalablelayout:2.1.0'
     compile 'io.reactivex.rxjava2:rxjava:2.0.8'
     compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
     compile 'com.jakewharton:butterknife:8.5.1'
-    provided 'org.projectlombok:lombok:1.16.16'
+    compile 'org.projectlombok:lombok:1.16.16'
 }
