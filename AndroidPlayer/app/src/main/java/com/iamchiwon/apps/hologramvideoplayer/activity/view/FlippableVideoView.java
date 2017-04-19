@@ -3,7 +3,6 @@ package com.iamchiwon.apps.hologramvideoplayer.activity.view;
 import android.content.Context;
 import android.graphics.SurfaceTexture;
 import android.media.MediaPlayer;
-import android.media.PlaybackParams;
 import android.net.Uri;
 import android.util.AttributeSet;
 import android.view.Surface;
@@ -32,30 +31,30 @@ public class FlippableVideoView extends TextureView implements TextureView.Surfa
         init();
     }
 
-    public FlippableVideoView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        init();
-    }
-
     private void init() {
         mediaPlayer = new MediaPlayer();
-        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mediaPlayer) {
-                mediaPlayer.start();
-            }
-        });
         setSurfaceTextureListener(this);
+    }
+
+    public void close() {
+        mediaPlayer.reset();
     }
 
     public void startVideo(Context context, Uri videoUri) {
         try {
             mediaPlayer.setDataSource(context, videoUri);
-            mediaPlayer.prepare();
-            mediaPlayer.start();
+            mediaPlayer.setLooping(true);
+            mediaPlayer.prepareAsync();
+            mediaPlayer.setOnPreparedListener(mp -> mp.start());
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void reset() {
+        this.setRotation(0.0f);
+        this.setScaleX(1);
+        this.setScaleY(1);
     }
 
     public void rotateRight() {
@@ -74,14 +73,9 @@ public class FlippableVideoView extends TextureView implements TextureView.Surfa
         this.setScaleY(-1);
     }
 
-    public void mute() {
-        mediaPlayer.setVolume(0, 0);
-    }
-
-    public void setSpeed(float speed) {
-        PlaybackParams params = mediaPlayer.getPlaybackParams();
-        params.setSpeed(1.0f);
-        mediaPlayer.setPlaybackParams(params);
+    public void sound(boolean bMute) {
+        float volume = bMute ? 0.0f : 1.0f;
+        mediaPlayer.setVolume(volume, volume);
     }
 
     public int getCurrentPosition() {
