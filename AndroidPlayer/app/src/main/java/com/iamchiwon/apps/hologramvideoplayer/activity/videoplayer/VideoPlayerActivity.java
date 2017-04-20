@@ -52,9 +52,9 @@ public class VideoPlayerActivity extends AppCompatActivity {
         filepath = getIntent().getStringExtra("filepath");
 
         flipToggle();
-        player2.sound(false);
-        player3.sound(false);
-        player4.sound(false);
+        player2.mute(true);
+        player3.mute(true);
+        player4.mute(true);
     }
 
     @Override
@@ -121,7 +121,7 @@ public class VideoPlayerActivity extends AppCompatActivity {
     @OnClick(R.id.button_mute)
     public void onMute() {
         isMute = !isMute;
-        player1.sound(isMute);
+        player1.mute(isMute);
     }
 
     @OnClick(R.id.button_pause)

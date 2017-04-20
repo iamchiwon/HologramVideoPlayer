@@ -73,7 +73,7 @@ public class FlippableVideoView extends TextureView implements TextureView.Surfa
         this.setScaleY(-1);
     }
 
-    public void sound(boolean bMute) {
+    public void mute(boolean bMute) {
         float volume = bMute ? 0.0f : 1.0f;
         mediaPlayer.setVolume(volume, volume);
     }
