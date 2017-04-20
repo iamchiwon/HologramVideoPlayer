@@ -68,7 +68,25 @@ class VideoListViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     navigationController?.isNavigationBarHidden = false
-    loadVideos()
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+
+    let status = PHPhotoLibrary.authorizationStatus()
+    if(status == .authorized) {
+      loadVideos()
+    } else if(status == .notDetermined) {
+      PHPhotoLibrary.requestAuthorization({ (result) in
+        if(result == .authorized) {
+          self.loadVideos()
+        } else {
+          self.showNeedAuthorizationMessage()
+        }
+      })
+    } else {
+      showNeedAuthorizationMessage()
+    }
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -78,6 +96,38 @@ class VideoListViewController: UIViewController {
         let destination = segue.destination as! VideoPlayerViewController
         destination.videoAsset = asset
       }
+    }
+  }
+  
+  func showNeedAuthorizationMessage() {
+    let label = UILabel()
+    label.text = "Please check to see if device settings doesn't allow photo library access."
+    label.textColor = .darkGray
+    label.numberOfLines = 0
+    label.textAlignment = .center
+    view.addSubview(label)
+    
+    label.translatesAutoresizingMaskIntoConstraints = false
+    label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    label.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
+    
+    let button = UIButton()
+    button.setTitle("Settings", for: .normal)
+    button.setTitleColor(.blue, for: .normal)
+    view.addSubview(button)
+    
+    button.translatesAutoresizingMaskIntoConstraints = false
+    button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    button.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 30).isActive = true
+    
+    button.addTarget(self, action: #selector(goSetting), for: .touchUpInside)
+  }
+  
+  func goSetting() {
+    let settingsUrl = NSURL(string:UIApplicationOpenSettingsURLString)
+    if let url = settingsUrl {
+      UIApplication.shared.openURL(url as URL)
     }
   }
 
