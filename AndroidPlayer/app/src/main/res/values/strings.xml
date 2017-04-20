@@ -2,5 +2,6 @@
     <string name="app_name">Hologramer</string>
     <string name="title_activity_video_player">VideoPlayer</string>
     <string name="need_read_permission_message">Read-Storage Permission Needs</string>
+    <string name="need_camera_permission_message">Access Camera Permission Needs</string>
     <string name="take_new_video">Take a new video</string>
 </resources>

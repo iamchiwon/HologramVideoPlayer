@@ -11,10 +11,11 @@ import com.iamchiwon.apps.hologramvideoplayer.model.VideoFile;
 import java.io.File;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.List;
 
-import io.reactivex.Observable;
-import io.reactivex.subjects.PublishSubject;
+import io.reactivex.functions.Consumer;
 import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Created by iamchiwon on 2017. 4. 14..
@@ -24,24 +25,29 @@ public class VideoListViewModel {
 
     @Getter
     ArrayList<VideoFile> videos = new ArrayList<>();
-
-    PublishSubject<ArrayList<VideoFile>> videosSubject = PublishSubject.create();
-
-    public Observable<ArrayList<VideoFile>> rxVideos() {
-        return videosSubject;
-    }
+    @Setter
+    Consumer<List<VideoFile>> onUpdateVideos;
 
     public void fetchVideoFiles(Context context) {
         Uri uri = MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
         String[] projection = {MediaStore.Video.VideoColumns.DATA};
         Cursor c = context.getContentResolver().query(uri, projection, null, null, null);
         if (c != null) {
+            videos.clear();
             while (c.moveToNext()) {
                 VideoFile item = new VideoFile();
                 item.setFilepath(c.getString(0));
                 videos.add(item);
             }
             c.close();
+        }
+
+        try {
+            if (onUpdateVideos != null) {
+                onUpdateVideos.accept(videos);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -56,7 +62,7 @@ public class VideoListViewModel {
 
     public String getVideoInfoText(Context context, String filepath) {
         File f = new File(filepath);
-        long size = f.getTotalSpace();
+        long size = f.length();
         long duration = videoDuration(context, filepath);
 
         String sizeText = readableFileSize(size);

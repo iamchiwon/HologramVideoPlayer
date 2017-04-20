@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -39,6 +40,8 @@ import butterknife.ButterKnife;
 public class VideoListActivity extends AppCompatActivity {
 
     final int PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 9999;
+    final int PERMISSIONS_REQUEST_CAPTURE_VIDEO = 9998;
+    final int REQUEST_VIDEO_CAPTURE = 999;
 
     @BindView(R.id.videoFileList)
     RecyclerView videoFileList;
@@ -57,6 +60,10 @@ public class VideoListActivity extends AppCompatActivity {
         videoFileList.setAdapter(adapter);
         videoFileList.setLayoutManager(new LinearLayoutManager(this));
 
+        viewModel.setOnUpdateVideos(list -> {
+            videoFileList.getAdapter().notifyDataSetChanged();
+        });
+
         checkReadStoragePermission();
     }
 
@@ -70,16 +77,28 @@ public class VideoListActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_camera) {
+            checkCaptureVideoPermission();
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        if (requestCode == REQUEST_VIDEO_CAPTURE && resultCode == RESULT_OK) {
+            viewModel.fetchVideoFiles(this);
+        }
+    }
+
+    private void takeVideo() {
+        Intent takeVideoIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+        if (takeVideoIntent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(takeVideoIntent, REQUEST_VIDEO_CAPTURE);
+        }
+    }
+
     private void onPermissionGranted() {
         viewModel.fetchVideoFiles(this);
-        viewModel.rxVideos().subscribe(videos -> {
-            viewModel.fetchVideoFiles(VideoListActivity.this);
-        });
     }
 
     private void checkReadStoragePermission() {
@@ -95,6 +114,15 @@ public class VideoListActivity extends AppCompatActivity {
         }
     }
 
+    private void checkCaptureVideoPermission() {
+        int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
+        if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
+            takeVideo();
+        } else {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, PERMISSIONS_REQUEST_CAPTURE_VIDEO);
+        }
+    }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -103,6 +131,12 @@ public class VideoListActivity extends AppCompatActivity {
                 onPermissionGranted();
             } else {
                 Toast.makeText(this, getString(R.string.need_read_permission_message), Toast.LENGTH_LONG).show();
+            }
+        } else if (requestCode == PERMISSIONS_REQUEST_CAPTURE_VIDEO) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                takeVideo();
+            } else {
+                Toast.makeText(this, getString(R.string.need_camera_permission_message), Toast.LENGTH_LONG).show();
             }
         }
     }
